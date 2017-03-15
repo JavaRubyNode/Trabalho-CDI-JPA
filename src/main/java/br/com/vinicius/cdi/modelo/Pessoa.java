@@ -114,6 +114,10 @@ public class Pessoa extends BaseEntity<Long>{
 		this.idade = idade;
 		this.dataNascimento = dataNascimento;
 	}
+
+
+
+	
 	
 	
 	
