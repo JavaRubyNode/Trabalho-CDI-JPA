@@ -1,6 +1,6 @@
 package br.com.vinicius.cdi.enums;
 
-public enum SigaUF {
+public enum SiglaUF {
 	
 	Acre("AC"),	 
 	Alagoas("AL"),	 
@@ -34,7 +34,7 @@ public enum SigaUF {
 
 	public String getUf() {return uf;}
 
-	private SigaUF(String uf) {this.uf = uf;}
+	private SiglaUF(String uf) {this.uf = uf;}
 	
 	
 
