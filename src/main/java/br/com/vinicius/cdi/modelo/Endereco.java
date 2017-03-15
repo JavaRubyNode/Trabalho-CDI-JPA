@@ -1,11 +1,13 @@
 package br.com.vinicius.cdi.modelo;
 
 import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import br.com.vinicius.cdi.enums.SigaUF;
+import br.com.vinicius.cdi.enums.SiglaUF;
 import br.com.vinicius.cdi.generic.BaseEntity;
 
 public class Endereco extends BaseEntity<Long>{
@@ -22,7 +24,9 @@ public class Endereco extends BaseEntity<Long>{
 	private String complemento;
 	private String cep;
 	private String estado;
-	private SigaUF uf;
+	
+	@Enumerated(EnumType.STRING)
+	private SiglaUF uf;
 	
 	
 	@Override
@@ -51,9 +55,9 @@ public class Endereco extends BaseEntity<Long>{
 
 	public void setEstado(String estado) {this.estado = estado;}
 
-	public SigaUF getUf() {return uf;}
+	public SiglaUF getUf() {return uf;}
 
-	public void setUf(SigaUF uf) {this.uf = uf;}
+	public void setUf(SiglaUF uf) {this.uf = uf;}
 
 
 	
