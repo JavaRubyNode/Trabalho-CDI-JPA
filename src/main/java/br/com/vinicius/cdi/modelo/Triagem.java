@@ -3,6 +3,7 @@ package br.com.vinicius.cdi.modelo;
 
 import java.util.Date;
 
+import javax.inject.Inject;
 import javax.persistence.Id;
 
 import br.com.vinicius.cdi.generic.BaseEntity;
@@ -13,6 +14,7 @@ public class Triagem extends BaseEntity<Long>{
 	private Long id;
 	private Integer versionTriagem;
 	private Date dataLanchamento;
+	@Inject
 	private Doador doador;
 	private boolean aprovado;
 	

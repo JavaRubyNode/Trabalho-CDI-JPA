@@ -2,15 +2,18 @@ package br.com.vinicius.cdi.modelo;
 
 import java.util.Date;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.persistence.Id;
-
 import br.com.vinicius.cdi.generic.BaseEntity;
 
+@Named
 public class RealizarDoacao extends BaseEntity<Long>{
 
 	@Id
 	private Long id;
 	private Integer versionRealizarDoacao;
+	@Inject
 	private Doador doador;
 	private Date dataDoacao;
 	private String nomeEnfermeira;

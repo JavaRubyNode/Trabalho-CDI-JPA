@@ -1,5 +1,6 @@
 package br.com.vinicius.cdi.modelo;
 
+import javax.inject.Inject;
 import javax.persistence.Id;
 
 import br.com.vinicius.cdi.generic.BaseEntity;
@@ -9,6 +10,7 @@ public class Doador extends BaseEntity<Long>{
 	@Id
 	private Long id;
 	private Integer versionDoador;
+    @Inject
 	private Pessoa pessoa;
 	private String observacoes;
 	
