@@ -47,6 +47,18 @@ public class BancoDeSangue extends BaseEntity<Long>{
 
 	public void setVersionBancoDeSangue(Integer versionBancoDeSangue) {this.versionBancoDeSangue = versionBancoDeSangue;}
 
+	public BancoDeSangue(String nome, br.com.vinicius.cdi.modelo.Endereco endereco, String telefone, String email) {
+		super();
+		this.nome = nome;
+		Endereco = endereco;
+		this.telefone = telefone;
+		this.email = email;
+	}
+
+	public BancoDeSangue() {super();}
+
+	public BancoDeSangue(Long id, String nome) {super();this.id = id;this.nome = nome;}
+
 
 
 	

@@ -59,6 +59,19 @@ public class Endereco extends BaseEntity<Long>{
 
 	public void setUf(SiglaUF uf) {this.uf = uf;}
 
+	public Endereco(String logradouro, String complemento, String cep, String estado, SiglaUF uf) {
+		super();
+		this.logradouro = logradouro;
+		this.complemento = complemento;
+		this.cep = cep;
+		this.estado = estado;
+		this.uf = uf;
+	}
+
+	public Endereco() {super();}
+
+	public Endereco(Long id, String cep) {super();this.id = id;this.cep = cep;}
+
 
 	
 	
