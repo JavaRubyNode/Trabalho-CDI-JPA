@@ -15,6 +15,11 @@ import br.com.vinicius.cdi.generic.BaseEntity;
 @Entity
 public class BancoDeSangue extends BaseEntity<Long>{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7465523295401780572L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "id", unique = true, nullable = false)
