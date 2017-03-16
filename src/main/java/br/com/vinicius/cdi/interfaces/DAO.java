@@ -8,6 +8,6 @@ public interface DAO<T> {
 	public void altualizar(T t);
 	public void removerPorId(Long id);
 	public List<T> listarTodos();
-	public void checarExistencia(T t);
+	public T checarExistencia(Long id);
 
 }
