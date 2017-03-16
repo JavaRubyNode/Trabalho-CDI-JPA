@@ -4,7 +4,16 @@ import java.util.Date;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import br.com.vinicius.cdi.generic.BaseEntity;
 
 @Named
@@ -14,9 +23,19 @@ public class RealizarDoacao extends BaseEntity<Long>{
 	private Long id;
 	private Integer versionRealizarDoacao;
 	@Inject
+	@Column(name="fk_doador",nullable=false)
 	private Doador doador;
+	
+	@Temporal(TemporalType.DATE)
+	@JsonFormat(pattern="dd/MM/yyyy")
+	@Basic(fetch=FetchType.LAZY)
 	private Date dataDoacao;
+	
+	@Column(name="nome_enfermeira",nullable=false,length=30)
 	private String nomeEnfermeira;
+	
+	@Inject
+	@JoinColumn
 	private Triagem triagem;
 	
 	
