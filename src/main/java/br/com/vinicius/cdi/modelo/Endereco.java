@@ -17,12 +17,19 @@ public class Endereco extends BaseEntity<Long>{
 	@Column(nullable=false,unique=true,name="pk_endereco_id")
 	private Long id;
 	
+	@Column(name = "versaoDoEndereco", nullable = false, length = 80)
 	private Integer versionEndereco;
 	
-	
+	@Column(name = "logradouro", nullable = false, length = 100)
 	private String logradouro;
+	
+	@Column(name = "complemento", nullable = false, length = 100)
 	private String complemento;
+	
+	@Column(name = "cep", nullable = false, length = 10)
 	private String cep;
+	
+	@Column(name = "estado", nullable = false, length = 20)
 	private String estado;
 	
 	@Enumerated(EnumType.STRING)
