@@ -24,6 +24,7 @@ public class Doacoes extends BaseEntity<Long>{
 	@OneToMany(mappedBy = "doador", fetch =FetchType.LAZY)
 	private List<RealizarDoacao> realizarDoacao;
 	
+	@Column(name="versaoDoacoes",nullable=false,length = 10)
 	private Integer versionDoacoes;
 	
 	
