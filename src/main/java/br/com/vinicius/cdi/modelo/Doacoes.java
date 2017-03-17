@@ -2,19 +2,29 @@ package br.com.vinicius.cdi.modelo;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import br.com.vinicius.cdi.generic.BaseEntity;
 
 public class Doacoes extends BaseEntity<Long>{
 
-	@Id
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id_doacoes",nullable=false,unique=true)
 	private Long id;
 	
+	@OneToMany(mappedBy = "pessoa", fetch =FetchType.LAZY)
 	private List<Doador> doadores;
-	private List<RealizarDoacao> realizarDoacao;
-	private Integer versionDoacoes;
 	
+	@OneToMany(mappedBy = "doador", fetch =FetchType.LAZY)
+	private List<RealizarDoacao> realizarDoacao;
+	
+	private Integer versionDoacoes;
 	
 	
 	@Override
