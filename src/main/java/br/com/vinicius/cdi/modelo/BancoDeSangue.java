@@ -36,7 +36,7 @@ public class BancoDeSangue extends BaseEntity<Long>{
 	@Column(name = "versaoDoBanco", nullable = false, length = 10)
 	private Integer versionBancoDeSangue; 
 	
-	// foi criado um atributo de versao para classe banco de sangue 
+	
 	
 	@Override
 	public Integer getVersion() {return getVersionBancoDeSangue();}
