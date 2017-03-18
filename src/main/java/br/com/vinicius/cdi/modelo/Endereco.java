@@ -23,10 +23,13 @@ public class Endereco extends BaseEntity<Long>{
 	@Column(name = "logradouro", nullable = false, length = 100)
 	private String logradouro;
 	
+	
 	@Column(name = "complemento", nullable = false, length = 100)
 	private String complemento;
 	
-	@Column(name = "cep", nullable = false, length = 10)
+	
+	
+	@Column(nullable=false,unique=false,name="cep")
 	private String cep;
 	
 	@Column(name = "estado", nullable = false, length = 20)
