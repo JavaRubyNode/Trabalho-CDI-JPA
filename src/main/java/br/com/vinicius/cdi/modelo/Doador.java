@@ -1,6 +1,9 @@
 package br.com.vinicius.cdi.modelo;
 
 import javax.inject.Inject;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import br.com.vinicius.cdi.generic.BaseEntity;
@@ -8,10 +11,18 @@ import br.com.vinicius.cdi.generic.BaseEntity;
 public class Doador extends BaseEntity<Long>{
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(nullable=false,unique=true,name="pk_doador_id")
 	private Long id;
+	
+	@Column(nullable=false,unique=false,name="versao_doador")
 	private Integer versionDoador;
     @Inject
+    
+    @Column(nullable=false,unique=false,name="pessoa")
 	private Pessoa pessoa;
+    
+    @Column(nullable=false,unique=false,name="observacoes")
 	private String observacoes;
 	
 	
